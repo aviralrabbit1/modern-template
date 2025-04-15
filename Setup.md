@@ -15,3 +15,26 @@ I selected these settings for this template
 √ Installing project dependencies
 🎉 Copied project files
 </pre>
+
+### 2. Building the server here in root folder only, so renamed `src` to `server`, also in `package.json`,
+```json
+  "scripts": {
+    "dev": "bun run --hot server/index.ts"
+  }
+```
+
+Copied `Suggested compilerOptions` from Bun website [Bun docs](https://bun.sh/docs/typescript#suggested-compileroptions) (features without seeing compiler warnings from TypeScript), and pasted in `tsconfig.json`, then add 'paths' to it-
+```json
+{
+  "compilerOptions": {
+    // Environment setup & latest features
+    "lib": ["ESNext"],
+    ...
+    "noPropertyAccessFromIndexSignature": false,
+    "paths": {
+      "@/shared/*": ["./shared/*"],
+      "@/*": ["./server/*"],
+    }
+  },
+}
+```
