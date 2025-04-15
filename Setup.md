@@ -38,3 +38,5 @@ Copied `Suggested compilerOptions` from Bun website [Bun docs](https://bun.sh/do
   },
 }
 ```
+
+### 3. Add Prettier, create `prettier.config.js`, `.prettierignore`.
